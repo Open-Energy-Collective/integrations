@@ -1,0 +1,9 @@
+# Secrets / local credentials — never commit
+.env
+.env.*
+secrets.yaml
+
+# Editor / agent-tool local state — machine-specific, not project config
+.claude/
+.vscode/
+.idea/

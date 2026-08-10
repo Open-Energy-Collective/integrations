@@ -25,3 +25,14 @@ All 5 of the handoff's own acceptance criteria are already met. No code change
 made — flagging that the handoff's premise is stale rather than actioning it, per
 `repos/.agent/context.md`'s rule that a planning-doc/reality mismatch is a finding
 to report, not something to silently "fix" by doing unnecessary work.
+
+## 2026-08-10 — Security/PII scan pass: no `.gitignore` existed at all, added; steering doc added
+
+**Cross-repo security pass** (`repos/.agent/security-scan.md`, new repeatable
+process this session, precedent `ha-tariff-au` commit `b5d2119`). Working tree and
+history clean — this repo is just a submodule-pointer wrapper (3 tracked files),
+low surface area. Gap found: no `.gitignore` existed at all. Added the standard
+secrets/agent-local-state exclusions used across the other repos. Also added a
+first `CLAUDE.md`/`.agent/context.md` (this repo had neither) pointing at
+`repos/.agent/context.md`'s org-wide rules, so this repo picks up the security-scan
+process (and everything else) without needing it copied in.
